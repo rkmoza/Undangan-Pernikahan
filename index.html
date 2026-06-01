@@ -165,15 +165,20 @@ transform:rotate(360deg);
 <body>
 
 <audio id="music" controls preload="auto" loop>
-    <source src="Music.mp3" type="audio/mpeg">
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
+
+<p id="audioStatus">Memuat musik...</p>
 
 <script>
 const audio = document.getElementById("music");
-const status = document.getElementById("audioStatus");
 
 audio.addEventListener("loadeddata", () => {
-    status.innerHTML = "✅ music.mp3 berhasil dimuat";
+    console.log("MP3 berhasil dimuat");
+});
+
+audio.addEventListener("error", () => {
+    alert("Music.mp3 tidak ditemukan atau rusak!");
 });
 </script>
 
