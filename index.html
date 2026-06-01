@@ -114,7 +114,9 @@ z-index:9999;
 }
 
 audio{
-display:none;
+display:block;
+width:300px;
+margin:20px auto;
 }
 
 @media(max-width:768px){
@@ -128,14 +130,48 @@ font-size:2rem;
 }
 
 }
+
+#musicBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#d4af37;
+color:#fff;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+z-index:99999;
+animation:spin 5s linear infinite;
+}
+
+@keyframes spin{
+from{
+transform:rotate(0deg);
+}
+to{
+transform:rotate(360deg);
+}
+}
+  
 </style>
 </head>
 
 <body>
 
-<audio id="music" loop>
-<source src="Westlife - Beautiful in white Lyrics(1).mp3" type="audio/mpeg">
+<audio id="music" controls preload="auto" loop>
+    <source src="Westlife - Beautiful in white Lyrics.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung audio.
 </audio>
+
+<div id="musicBtn" onclick="toggleMusic()">
+🎵
+</div>
 
 <section class="hero">
 
@@ -318,7 +354,11 @@ Terima kasih atas doa dan restunya
 
 function openInvitation(){
 
-document.getElementById("music").play();
+const music=document.getElementById("music");
+
+music.play().catch(err=>{
+console.log("Audio Error:",err);
+});
 
 document.getElementById("content").scrollIntoView({
 behavior:"smooth"
@@ -392,6 +432,44 @@ sakura.remove();
 }
 
 setInterval(createSakura,250);
+
+const music=document.getElementById("music");
+
+function toggleMusic(){
+
+const music=document.getElementById("music");
+const btn=document.getElementById("musicBtn");
+
+if(music.paused){
+
+music.play().catch(err=>{
+console.log(err);
+});
+
+btn.innerHTML="🎵";
+
+}else{
+
+music.pause();
+
+btn.innerHTML="🔇";
+
+}
+
+}
+
+// putar otomatis saat klik pertama
+window.addEventListener("load",()=>{
+
+const music=document.getElementById("music");
+
+document.body.addEventListener("click",()=>{
+
+music.play().catch(()=>{});
+
+},{once:true});
+
+});
 
 </script>
 
