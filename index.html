@@ -164,11 +164,12 @@ transform:rotate(360deg);
 
 <body>
 
-<audio id="music" controls preload="auto" loop>
+<audio id="music" controls loop>
     <source src="music.mp3" type="audio/mpeg">
+    Browser tidak mendukung audio.
 </audio>
 
-<p id="audioStatus">Memuat musik...</p>
+<p id="audioStatus"></p>
 
 <script>
 const audio = document.getElementById("music");
@@ -484,6 +485,17 @@ music.play().catch(()=>{});
 
 });
 
+<script>
+const audio = document.getElementById("music");
+const status = document.getElementById("audioStatus");
+
+audio.addEventListener("loadeddata", () => {
+    status.innerHTML = "✅ Musik berhasil dimuat";
+});
+
+audio.addEventListener("error", () => {
+    status.innerHTML = "❌ music.mp3 tidak ditemukan";
+});
 </script>
 
 </body>
