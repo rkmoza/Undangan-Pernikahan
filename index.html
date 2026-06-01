@@ -483,8 +483,8 @@ music.play().catch(()=>{});
 },{once:true});
 
 });
+</script>
 
-<script>
 const audio = document.getElementById("music");
 const status = document.getElementById("audioStatus");
 
@@ -498,14 +498,10 @@ audio.addEventListener("error", () => {
 </script>
 
 <body>
-
 <audio id="music" controls loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
 </audio>
 
-<div id="musicBtn" onclick="toggleMusic()">
-🎵
-</div>
-
-<section class="hero">
+<p id="audioStatus">Memuat musik...</p>
+</script>
 </html>
