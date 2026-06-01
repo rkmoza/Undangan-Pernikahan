@@ -168,14 +168,14 @@ transform:rotate(360deg);
     <source src="Music.mp3" type="audio/mpeg">
 </audio>
 
-<p id="audioStatus"></p>
-
+<script>
 const audio = document.getElementById("music");
 const status = document.getElementById("audioStatus");
 
 audio.addEventListener("loadeddata", () => {
-    status.innerHTML = "✅ Music.mp3 berhasil dimuat";
+    status.innerHTML = "✅ music.mp3 berhasil dimuat";
 });
+</script>
 
 <div id="musicBtn" onclick="toggleMusic()">
 🎵
