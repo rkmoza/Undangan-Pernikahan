@@ -6,7 +6,7 @@
 
 <title>The Wedding Of Mohammad Zakaria & Rahayu Permatasari</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -21,10 +21,10 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:'Poppins',sans-serif;
+font-family:Poppins,sans-serif;
 background:#faf7f2;
-color:#333;
 overflow-x:hidden;
+color:#333;
 }
 
 .hero{
@@ -35,40 +35,46 @@ align-items:center;
 text-align:center;
 color:white;
 background:
-linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80');
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80");
 background-size:cover;
 background-position:center;
+padding:20px;
 }
 
 .hero h1{
 font-family:'Cormorant Garamond',serif;
 font-size:4rem;
+margin:20px 0;
+}
+
+.hero p{
+font-size:18px;
 }
 
 .btn{
 background:#d4af37;
 color:white;
 border:none;
-padding:14px 30px;
+padding:15px 30px;
 border-radius:50px;
 cursor:pointer;
-font-size:16px;
 margin-top:20px;
+font-size:16px;
 }
 
 .section{
 padding:80px 20px;
-text-align:center;
-max-width:1100px;
+max-width:1000px;
 margin:auto;
+text-align:center;
 }
 
 .title{
 font-family:'Cormorant Garamond',serif;
 font-size:3rem;
 color:#b8860b;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 .card{
@@ -84,7 +90,7 @@ display:flex;
 justify-content:center;
 gap:15px;
 flex-wrap:wrap;
-margin-top:20px;
+margin-top:30px;
 }
 
 .box{
@@ -104,15 +110,8 @@ font-weight:bold;
 footer{
 background:#111;
 color:white;
-padding:40px;
+padding:50px 20px;
 text-align:center;
-}
-
-.sakura{
-position:fixed;
-top:-20px;
-pointer-events:none;
-z-index:9999;
 }
 
 #musicBtn{
@@ -122,25 +121,27 @@ right:20px;
 width:60px;
 height:60px;
 background:#d4af37;
-color:white;
 border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
 font-size:28px;
 cursor:pointer;
+z-index:9999;
 box-shadow:0 5px 15px rgba(0,0,0,.3);
-z-index:99999;
 animation:spin 5s linear infinite;
 }
 
 @keyframes spin{
-from{
-transform:rotate(0deg);
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
 }
-to{
-transform:rotate(360deg);
-}
+
+.sakura{
+position:fixed;
+top:-20px;
+pointer-events:none;
+z-index:999;
 }
 
 @media(max-width:768px){
@@ -156,20 +157,16 @@ font-size:2rem;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<audio id="music" loop preload="auto">
-<source src="https://www.youtube.com/watch?v=Trjrj_fQnIM&list=RDTrjrj_fQnIM&start_radio=1" type="audio/mpeg">
+<!-- GANTI music.mp3 dengan lagu milikmu -->
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<p id="audioStatus" style="text-align:center;padding:10px;">
-Memuat musik...
-</p>
-
-<div id="musicBtn" onclick="toggleMusic()">
+<div id="musicBtn">
 🎵
 </div>
 
@@ -181,7 +178,9 @@ Memuat musik...
 
 <h1>
 Mohammad Zakaria
-<br>&<br>
+<br>
+&
+<br>
 Rahayu Permatasari
 </h1>
 
@@ -215,9 +214,7 @@ untuk hadir dalam acara pernikahan kami.
 
 <section class="section">
 
-<h2 class="title">
-Mempelai
-</h2>
+<h2 class="title">Mempelai</h2>
 
 <div class="card">
 
@@ -229,7 +226,7 @@ Putra Tercinta dari
 Bpk. Alm Supriyadi & Ibu Yasnita
 </p>
 
-<br>
+<br><br>
 
 <h3>Rahayu Permatasari</h3>
 
@@ -245,19 +242,19 @@ Bpk. Very Irwandi & Ibu Indah Rahayu
 
 <section class="section">
 
-<h2 class="title">
-Akad & Resepsi
-</h2>
+<h2 class="title">Akad & Resepsi</h2>
 
 <div class="card">
 
 <h3>Akad Nikah</h3>
+
 <p>05 Juli 2026</p>
 <p>08.00 WIB</p>
 
-<hr style="margin:20px 0">
+<hr style="margin:25px 0">
 
 <h3>Resepsi</h3>
+
 <p>05 Juli 2026</p>
 <p>10.00 WIB - Selesai</p>
 
@@ -267,9 +264,7 @@ Akad & Resepsi
 
 <section class="section">
 
-<h2 class="title">
-Hitung Mundur
-</h2>
+<h2 class="title">Hitung Mundur</h2>
 
 <div class="countdown">
 
@@ -299,13 +294,11 @@ Detik
 
 <section class="section">
 
-<h2 class="title">
-Lokasi Acara
-</h2>
+<h2 class="title">Lokasi Acara</h2>
 
 <a
 class="btn"
-href="https://share.google/SRRhufD1DvtwdTh7r"
+href="https://maps.google.com"
 target="_blank">
 Buka Google Maps
 </a>
@@ -325,7 +318,7 @@ Amplop Digital
 <h2>085710060940</h2>
 
 <button class="btn" onclick="copyDana()">
-Salin Nomor DANA
+Salin Nomor
 </button>
 
 </div>
@@ -340,6 +333,8 @@ Mohammad Zakaria
 Rahayu Permatasari
 </h2>
 
+<br>
+
 <p>
 Terima kasih atas doa dan restunya
 </p>
@@ -349,11 +344,11 @@ Terima kasih atas doa dan restunya
 <script>
 
 const music = document.getElementById("music");
-const status = document.getElementById("audioStatus");
+const musicBtn = document.getElementById("musicBtn");
 
 function openInvitation(){
 
-music.play();
+music.play().catch(()=>{});
 
 document.getElementById("content").scrollIntoView({
 behavior:"smooth"
@@ -361,31 +356,27 @@ behavior:"smooth"
 
 }
 
-function toggleMusic(){
-
-const btn = document.getElementById("musicBtn");
+musicBtn.addEventListener("click",()=>{
 
 if(music.paused){
 
 music.play();
-
-btn.innerHTML="🎵";
+musicBtn.innerHTML="🎵";
 
 }else{
 
 music.pause();
-
-btn.innerHTML="🔇";
-
-}
+musicBtn.innerHTML="🔇";
 
 }
+
+});
 
 function copyDana(){
 
 navigator.clipboard.writeText("085710060940");
 
-alert("Nomor DANA berhasil disalin");
+alert("Nomor berhasil disalin");
 
 }
 
@@ -414,7 +405,7 @@ Math.floor((distance%(1000*60))/1000);
 
 function createSakura(){
 
-const sakura=document.createElement("div");
+const sakura = document.createElement("div");
 
 sakura.classList.add("sakura");
 
@@ -437,7 +428,6 @@ sakura.style.top=y+"px";
 if(y>window.innerHeight){
 
 clearInterval(fall);
-
 sakura.remove();
 
 }
@@ -446,17 +436,7 @@ sakura.remove();
 
 }
 
-setInterval(createSakura,250);
-
-music.addEventListener("loadeddata",()=>{
-
-});
-
-music.addEventListener("error",()=>{
-
-status.innerHTML="❌ Musik gagal dimuat";
-
-});
+setInterval(createSakura,300);
 
 document.body.addEventListener("click",()=>{
 
